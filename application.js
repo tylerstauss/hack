@@ -13,7 +13,7 @@ $(document).ready(function(){
 					var teamName = data.sports[0].leagues[0].teams[i].name.toLowerCase();
 					teamsArray[teamName] = teamId;
 				};
-				console.log(teamsArray);
+				//console.log(teamsArray);
 				return teamsArray;
 
 			},
@@ -26,11 +26,16 @@ $(document).ready(function(){
 	getTeamInfo = function(){  
 		teams();
 		var team = $('#team').val().toLowerCase();
-		console.log(team);
-		var teamId = teamsArray[team];
+	
+		//console.log(team);
+		teamId = teamsArray[team];
+		if (!teamId) {
+			$('#error').html('Looks like you didn\'t type in a valid NFL team name. Please try again.')
+		};
+	
 
 		$.ajax({
-			url: 'http://api.espn.com/v1/sports/football/nfl/teams/'+teamId+'?apikey=rxdkacnu34evezasexjb87pz',
+			url: 'http://api.espn.com/v1/sports/football/nfl/teams/'+(teamId || 25)+'?apikey=rxdkacnu34evezasexjb87pz',
 			type: 'GET',
 			dataType: 'jsonp',
 		    crossDomain: true,
