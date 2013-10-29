@@ -9,33 +9,35 @@
 </head>
 
 <body>
-
-		<h1>NFL Season Records!</h1>
-		<p id="instructions">Type in your favorite team's name!</p>
-		<input type="text" placeholder="falcons, cowboys, 49ers..." id="team">
-		<!-- <button id="submit">Find My Team</button> -->
-
-	
-		<div id="content">
-			<p id="response"></p>
-			<p id="logo"></p>
-			
-
-			<div class="record left">
-				<p>Wins</p>
-				<p id="wins"></p>
-			</div>
-			<div class="record right">
-				<p>Losses</p>
-				<p  id="losses"></p>
-			</div>
-		
+	<h1>NFL Season Records!</h1>
+	<p id="instructions">Type in your favorite team's name!</p>
+	<input type="text" placeholder="falcons, cowboys, 49ers..." id="team">
+	<p id="error"></p>
+	<div id="content">
+		<p id="response">How is your team doing this year?</p>
+		<p id="logo"></p>
+		<div class="record left">
+			<p>Wins</p>
+			<p id="wins"></p>
 		</div>
+		<div class="record right">
+			<p>Losses</p>
+			<p  id="losses"></p>
+		</div>
+	</div>
+	<div ><h2 id="h2" class="hidden">Recent Articles</h2></div>
+	<div id="articles" class="hidden">
+		<h3 class="headline"></h3>
+		<p ><span class="author"></span></p>
+		<div class="story hidden"></div>
+
+	</div>
 
 	<footer>
 		<div id="credit">
 			<p>This site was created by Tyler Stauss for non-commercial purposes<br> with the <a href="http://www.espn.com">ESPN.com</a> Developer API.</p>
 		</div>	
 	</footer>
+
 </body>
 </html>

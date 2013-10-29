@@ -76,6 +76,16 @@ h1 {
 	color: #af1212;
 	text-shadow: 1px 1px #ffffff;
 }
+h2 {
+	font-size: 1.7em;
+	color: #af1212;
+	text-shadow: 1px 1px #ffffff;
+}
+}
+#error {
+	color: #fff;
+	font-size: 1.1em;
+}
 #content {
 	width: 40%;
 	margin: 2% auto;
@@ -130,6 +140,24 @@ h1 {
 	position: relative;
 	top: 10px;
 
+}
+#articles {
+	width: 60%;
+	margin: 2% auto;
+	background-color: #eee;
+	border-radius: 10px;
+	border: 2px solid #000;
+	padding: 1%;
+}
+
+.hidden {
+	display: none;
+}
+.headline {
+	font-size: 1.4em;
+	text-decoration: underline;
+	color: rgb(0, 0, 238);
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1000px){
