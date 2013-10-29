@@ -32,7 +32,7 @@ body {
 	line-height: 1;
 	height: 100%;
 	text-align: center;
-	background-color: #2244aa;
+	background-color: #124C88;
 }
 ol, ul {
 	list-style: none;
@@ -52,10 +52,19 @@ table {
 
 footer {
 	font-size: .7em;
+	width: 100%;
+	text-align: none;
+	position: absolute;
+
+}
+#credit {
+	margin: 40px auto;
+	height: 5px;
+	width: 50%;
 }
 
 input {
-	width: 35%;
+	width: 30%;
 	height: 50px;
 	font-size: 1.5em;
 	padding: 1%;
@@ -64,6 +73,8 @@ input {
 }
 h1 {
 	font-size: 2em;
+	color: #af1212;
+	text-shadow: 1px 1px #ffffff;
 }
 #content {
 	width: 40%;
@@ -71,27 +82,29 @@ h1 {
 	background-color: #eee;
 	border-radius: 10px;
 	border: 2px solid #000;
-	height: 200px;
+	height: 175px;
+	position: relative;
 }
 #logo {
-	position: relative;
-	right: 22%;
-	top: -30px;
+	position: absolute;
+	right: 88%;
+	top: -20px;
+	z-index: 2;
+	max-width: 100%;
 }
 
 #response {
 	font-size: 1.7em;
 }
 .record {
-	width: 30%;
+	width: 25%;
 	border: 3px solid #000;
 	margin: 2%;
 	padding: 1%;
 	position: relative;
-	top: -100px;
 	border-radius: 5px;
 	font-size: 1.4em;
-	margin-top: 5%;
+	
 
 }
 .left {
@@ -109,4 +122,61 @@ h1 {
 #losses {
 	color: #bb1111;
 	font-size: 2em;
+}
+
+#instructions {
+	color: #ccc;
+	margin: 5px auto;
+	position: relative;
+	top: 10px;
+
+}
+
+@media screen and (max-width: 1000px){
+input {
+	font-size: 1.1em;
+}
+#content {
+	height: 150px;
+}
+#logo {
+	right: 85%;
+}
+}
+
+@media screen and (max-width: 900px){
+	#logo {
+		right: 70%;
+		top: -15px;
+		height: 75px;
+		width: 75px;
+	}
+
+}
+
+@media screen and (max-width: 800px){
+
+	.record {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: 700px){
+#logo {
+		right: 28%;
+		top: 50%;
+		height: 75px;
+		width: 75px;
+	}
+
+}
+@media screen and (max-width: 600px){
+#logo {
+		right: 25%;
+
+	}
+input {
+	font-size: .8em;
+	height: 30px;
+}
 }
