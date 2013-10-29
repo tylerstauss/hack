@@ -1,12 +1,7 @@
-$(document).ready(function(){ 
+$(document).ready(function(){
 
-
-
-	getTeamInfo = function(){  
-
-		
-		var teamsArray = [];
-		teams = function(){
+	var teamsArray = [];
+	teams = function(){
 			$.ajax({
 			url: 'http://api.espn.com/v1/sports/football/nfl/teams/?apikey=rxdkacnu34evezasexjb87pz',
 			type: 'GET',
@@ -15,7 +10,7 @@ $(document).ready(function(){
 			success: function(data){
 				for (var i = 0; i < 32; i++) {
 					var teamId = data.sports[0].leagues[0].teams[i].id;
-					var teamName = data.sports[0].leagues[0].teams[i].name;
+					var teamName = data.sports[0].leagues[0].teams[i].name.toLowerCase();
 					teamsArray[teamName] = teamId;
 				};
 				console.log(teamsArray);
@@ -28,9 +23,9 @@ $(document).ready(function(){
 		});
 		}
 
-
+	getTeamInfo = function(){  
 		teams();
-		var team = $('#team').val();
+		var team = $('#team').val().toLowerCase();
 		console.log(team);
 		var teamId = teamsArray[team];
 
@@ -41,11 +36,14 @@ $(document).ready(function(){
 		    crossDomain: true,
 			success: function(data){
 				var teamName = data.sports[0].leagues[0].teams[0].name;
+				var teamCity = data.sports[0].leagues[0].teams[0].location;
 				var teamLogo = data.sports[0].leagues[0].teams[0].logos.large.href;
-				var teamRecord = data.sports[0].leagues[0].teams[0].record.summary;
-				$('#response').html(teamName);
-				$('#logo').html(teamLogo);
-				$('#record').html(teamRecord);
+				var wins = data.sports[0].leagues[0].teams[0].record.wins;
+				var losses = data.sports[0].leagues[0].teams[0].record.losses;
+				$('#response').html(teamCity + ' ' + teamName);
+				$('#logo').html('<img id="logo" src=' + teamLogo + ' />');
+				$('#wins').html(wins);
+				$('#losses').html(losses);
 			},
 			error: function(status, code, message){
 				$('#response').html('failure');
@@ -54,6 +52,11 @@ $(document).ready(function(){
 		
 	}  // end getTeamInfo
 $('#submit').click(getTeamInfo());
+ $('#team').keyup(function(event){
+       if(event.keyCode == 13){
+           getTeamInfo();
+       }
+   });
 
 
 }); // end document.ready function

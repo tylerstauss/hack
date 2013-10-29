@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>ESPN</title>
+<title>NFL Records</title>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="application.js"></script>
 <link href='./style.css' rel='stylesheet' type='text/css'>
@@ -10,17 +10,28 @@
 
 <body>
 
-		<h3>NFL Season Records!</h3>
-		<form>
+		<h1>NFL Season Records!</h1>
+		<p>Type in your favorite team's name!</p>
 		<input type="text" placeholder="falcons, cowboys, 49ers..." id="team">
-		<input type="submit" value="Submit">
-		</form>
+		<!-- <button id="submit">Find My Team</button> -->
+
 	
+		<div id="content">
+			<p id="response"></p>
+			<p id="logo"></p>
+			
 
-	<p id="response"></p>
-	<p id="logo"></p>
-	<p id="record"></p>
+			<div class="record left">
+				<p>Wins</p>
+				<p id="wins"></p>
+			</div>
+			<div class="record right">
+				<p>Losses</p>
+				<p  id="losses"></p>
+			</div>
+		
+		</div>
 
-
+<footer>This site was created by Tyler Stauss for non-commercial purposes with the <a href="http://www.espn.com">ESPN.com</a> Developer API.</footer>
 </body>
 </html>
